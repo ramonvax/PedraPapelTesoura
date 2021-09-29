@@ -46,23 +46,38 @@ public class RockPaperScissors {
                 int pcChoice = generator.nextInt(3);
                 String[] game = { "pedra", "papel", "tesoura" };
                 System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");
-                System.out.println("5 - limpar a tela   |   6 - Retornar ao menu principal");
+                System.out.println("9 - Retornar ao menu principal");
                 userChoice = entrada.nextInt();
-                System.out.println(pcChoice);
-                if (userChoice == 0) {
-                    System.out.println("Voce escolheu: " + game[userChoice]);
-                    System.out.println("Computador escolheu: " + game[pcChoice]);
-                } else if (userChoice == 1) {
-                    System.out.println("Voce escolheu: " + game[userChoice]);
-                    System.out.println("Computador escolheu: " + game[pcChoice]);
-                } else if (userChoice == 2) {
-                    System.out.println("Voce escolheu: " + game[userChoice]);
-                    System.out.println("Computador escolheu: " + game[pcChoice]);
-                } else if (userChoice == 5) {
-                    System.out.print("\033[H\033[2J");
-                } else if (userChoice == 6) {
-                    System.out.println("Game exit");
-                    startGame = false;
+                System.out.println("Voce escolheu: " + game[userChoice]);
+                System.out.println("Computador escolheu: " + game[pcChoice]);
+                // Escolhas
+                if (userChoice == pcChoice) {                    
+                    System.out.println("Empate");
+                    System.out.println("\n\n");
+                } else if (userChoice == 0 && pcChoice == 1) {                    
+                    System.out.println("Você Perdeu");
+                    System.out.println("Papel embrulha pedra");
+                    System.out.println("\n\n");
+                } else if (userChoice == 0 && pcChoice == 2) {                    
+                    System.out.println("Você Venceu");
+                    System.out.println("Pedra quebra a tesoura");
+                    System.out.println("\n\n");
+                } else if (userChoice == 1 && pcChoice == 2) {
+                    System.out.println("Você Perdeu");
+                    System.out.println("Tesoura corta papel");
+                    System.out.println("\n\n");
+                } else if (userChoice == 1 && pcChoice == 0) {
+                    System.out.println("Você Venceu");
+                    System.out.println("Papel embrulha pedra");
+                    System.out.println("\n\n");
+                } else if (userChoice == 2 && pcChoice == 0) {
+                    System.out.println("Você Perdeu");
+                    System.out.println("Pedra quebra a tesoura");
+                    System.out.println("\n\n");
+                } else if (userChoice == 2 && pcChoice == 1) {
+                    System.out.println("Você Venceu");
+                    System.out.println("Tesoura corta papel");
+                    System.out.println("\n\n");
                 }
             }
         }
