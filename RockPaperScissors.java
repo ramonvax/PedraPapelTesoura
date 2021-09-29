@@ -1,4 +1,5 @@
 import java.security.Principal;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,8 +17,8 @@ public class RockPaperScissors {
         System.out.print("\033[H\033[2J");
         // MENU ESCOLHA
         on = true;
-        while (on) { 
-            Boolean startGame = false;           
+        while (on) {
+            Boolean startGame = false;
             System.out.println("1 - Jogar\n2 - Regras\n3 - Limpa Tela\n4 - Sair");
             menu = entrada.nextInt();
             // System.out.print("\033[H\033[2J");
@@ -35,13 +36,31 @@ public class RockPaperScissors {
             } else if (menu == 4) {
                 System.out.println("Até logo");
                 on = false;
+            } else {
+                System.out.println("Comando não existe\nTente novamente outr opção");
             }
             // JOGO
             while (startGame) {
-                int choice;
-                System.out.println("Game on");
-                choice = entrada.nextInt();
-                if (choice == 5) {
+                Random generator = new Random();
+                int userChoice;
+                int pcChoice = generator.nextInt(3);
+                String[] game = { "pedra", "papel", "tesoura" };
+                System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");
+                System.out.println("5 - limpar a tela   |   6 - Retornar ao menu principal");
+                userChoice = entrada.nextInt();
+                System.out.println(pcChoice);
+                if (userChoice == 0) {
+                    System.out.println("Voce escolheu: " + game[userChoice]);
+                    System.out.println("Computador escolheu: " + game[pcChoice]);
+                } else if (userChoice == 1) {
+                    System.out.println("Voce escolheu: " + game[userChoice]);
+                    System.out.println("Computador escolheu: " + game[pcChoice]);
+                } else if (userChoice == 2) {
+                    System.out.println("Voce escolheu: " + game[userChoice]);
+                    System.out.println("Computador escolheu: " + game[pcChoice]);
+                } else if (userChoice == 5) {
+                    System.out.print("\033[H\033[2J");
+                } else if (userChoice == 6) {
                     System.out.println("Game exit");
                     startGame = false;
                 }
