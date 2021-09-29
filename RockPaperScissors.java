@@ -45,8 +45,7 @@ public class RockPaperScissors {
                 int userChoice;
                 int pcChoice = generator.nextInt(3);
                 String[] game = { "pedra", "papel", "tesoura" };
-                System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");
-                System.out.println("9 - Retornar ao menu principal");
+                System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");                
                 userChoice = entrada.nextInt();
                 System.out.println("Voce escolheu: " + game[userChoice]);
                 System.out.println("Computador escolheu: " + game[pcChoice]);
