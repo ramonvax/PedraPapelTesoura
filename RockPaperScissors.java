@@ -45,10 +45,13 @@ public class RockPaperScissors {
                 int userChoice;
                 int pcChoice = generator.nextInt(3);
                 String[] game = { "pedra", "papel", "tesoura" };
-                System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");                
+                System.out.println("0 - Pedra   |   1 - Papel   |   2 - Tesoura");
+                System.out.println("7 - Limpa a Tela   |   9 - Retorna ao menu principal");
                 userChoice = entrada.nextInt();
-                System.out.println("Voce escolheu: " + game[userChoice]);
-                System.out.println("Computador escolheu: " + game[pcChoice]);
+                if (userChoice == 0 ||userChoice == 1 ||userChoice == 2) {
+                    System.out.println("Voce escolheu: " + game[userChoice]);
+                    System.out.println("Computador escolheu: " + game[pcChoice]);
+                }
                 // Escolhas
                 if (userChoice == pcChoice) {                    
                     System.out.println("Empate");
@@ -77,6 +80,16 @@ public class RockPaperScissors {
                     System.out.println("Você Venceu");
                     System.out.println("Tesoura corta papel");
                     System.out.println("\n\n");
+                } /* MENU */ 
+                else if (userChoice == 7) {
+                    System.out.print("\033[H\033[2J");
+                } else if (userChoice == 8 ) {
+                    System.out.println("Menu sem atribuição");
+                } else if (userChoice == 9) {        
+                    startGame = false;
+                    System.out.print("\033[H\033[2J");
+                    System.out.println("Usuario saiu do jogo");
+                    System.out.println("------------------------------------------------------");
                 }
             }
         }
